@@ -6,7 +6,4 @@ var Frog = new Schema({
   favFlyMeal: String
 });
 
-mongoose.connect(process.env.DB_HOST);
-
-
 module.exports = mongoose.model('frogs', Frog);

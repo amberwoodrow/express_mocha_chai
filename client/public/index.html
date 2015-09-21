@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frogs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+
+    <div class="row">
+
+      <h1>Frogs</h1>
+
+      <div class="col-md-6">
+        <div class="col-md-11">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Favorite fly meal</th>
+                <th>Delete</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody id="frog-list">
+              
+            </tbody>
+          </table>
+
+          <div id="edit-div">
+            <form id="edit-frog" method="put" action="/frogs">
+              <div class="form-group">
+                <label for="name">Frog's name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+              </div>
+              <div class="form-group">
+                <label for="favFlyMeal">Favorite frog meal</label>
+                <input type="text" class="form-control" id="favFlyMeal" name="favFlyMeal" placeholder="Fly macaroni" required>
+              </div>
+              <button type="submit" class="btn btn-default" id="submit-edit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="col-md-11">
+          <h3>Create a new froggy</h3>
+          <form id="new-frog" method="post" action="/frogs">
+            <div class="form-group">
+              <label for="name">Frog's name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+            </div>
+            <div class="form-group">
+              <label for="favFlyMeal">Favorite frog meal</label>
+              <input type="text" class="form-control" id="favFlyMeal" name="favFlyMeal" placeholder="Fly macaroni" required>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

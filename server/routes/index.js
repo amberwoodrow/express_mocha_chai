@@ -11,7 +11,7 @@ router.get('/frogs', function(req, res) {
     }
     else {
 
-       res.json({frogs : data});
+       res.json({frogs : data}).status(200).end();
     }
   });
 });
@@ -23,7 +23,7 @@ router.get('/frog/:id', function(req, res){
       res.json({'message' : err});
     }
     else {
-      res.json({frog : data});
+      res.json({frog : data}).status(200).end();
     }
   });
 });
@@ -34,14 +34,14 @@ router.post('/frogs', function(req, res) {
     name: req.body.name,
     favFlyMeal: req.body.favFlyMeal,
   });
-  console.log(req.body.name);
-  console.log(req.body.favFlyMeal);
+  // console.log(req.body.name);
+  // console.log(req.body.favFlyMeal);
   newFrog.save(function(err, data) {
     if(err) {
       res.json({'message' : err});
     }
     else {
-      res.json(newFrog);
+      res.json(newFrog).status(200).end();
     }
   });
 });
@@ -59,7 +59,7 @@ router.put('/frog/:id', function(req, res, next) {
     }
     else {
       Frog.findById({'_id': req.params.id}, function(err, data){
-        res.json(data);
+        res.json(data).status(200).end();
       });
     }
   });
@@ -72,7 +72,7 @@ router.delete('/frog/:id', function(req, res, next) {
       res.json({'message' : err});
     }
     else {
-      res.json({'deleted' : 'true'});
+      res.json({'deleted' : 'true'}).status(200).end();
     }
   });
 });
